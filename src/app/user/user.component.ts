@@ -16,8 +16,9 @@ import { DataService } from '../services/data.service';
 })
 export class UserComponent {
     @Input('title') title : string;
-    @Input('users') users : User[];
-    
+    // @Input('users') users : User[];
+    users : User[];
+
     myClasses = {
         myBorder : true,
         myText : false
@@ -35,13 +36,14 @@ export class UserComponent {
     this.dataService.counter++;
   }
 
-    // ngOnInit(){
-    //     console.log("ngOnInit");
-    // }
+    ngOnInit(){
+        this.dataService.getApiData()
+            .subscribe(data=>this.users = data);
+    }
     // ngOnChanges(changes : SimpleChanges){
     //     console.log("ngOnChanges", changes);
     // }
-   constructor(public dataService : DataService){console.log("constructor")}
+   constructor(public dataService : DataService){}
     // ngDoCheck(){console.log("ngDoCheck");}
     // ngAfterContentInit(){console.log("ngAfterContentInit");}
     // ngAfterContentChecked(){console.log("ngAfterContentChecked");}
