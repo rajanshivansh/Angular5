@@ -33,7 +33,7 @@ export const APP_ROUTES : Routes = [{
         redirectTo : 'overview',
         pathMatch : 'full'
     },{
-        path : 'overview',
+        path : 'overview/:id',
         component : OverviewComponent
     },{
         path : 'spec',
