@@ -1,0 +1,56 @@
+<h1> Counter in User : {{ dataService.counter }}</h1>
+<button class="btn btn-default" (click)="increase()">Increase </button>
+<hr>
+<br>
+
+
+
+<ng-content select="h1"></ng-content>
+
+<!-- JSON Pipe : {{ users | json }} -->
+
+<div class="container">
+    Parent Title Property : {{ title}}
+</div>
+
+<hr>
+<br>
+<div class="container">
+    <ul class="list-unstyled">
+        <li class="well" *ngFor="let user of users; index as i;first as isFirst; even as isEven">
+            <div class="row">
+                {{ i }} {{ isFirst }} {{ isEven }}
+                <div class="col-xs-2 col-sm-2 col-md-2">
+                    <img [src]="user.image" class="img-responsive img-circle">
+                    <button class="btn btn-info btn-sm" (click)="moreInfo(user)">
+                        More Info
+                    </button>
+                </div>
+                <div class="col-xs-8 col-sm-8 col-md-8">
+                    <h1 apphighlight [myColor]="'yellow'" [defaultColor]="myDefaultColor"> 
+                        {{ user.firstName | uppercase }} {{ user.lastName | uppercase}}</h1>
+                    <p [ngClass]="myClasses"> Date of Birth :
+                        <span [innerHTML]="user.dob | date : 'MM/dd/yyyy'"></span>
+                    </p>
+                    <!-- <ng-template [ngIf]="user.isWorking">
+                        <p>Income : {{ user.income }}</p>
+                    </ng-template> -->
+                    <p *appUnless="!user.isWorking">
+                        AppUnless Works!
+                    </p>
+                    <p *ngIf="user.isWorking; else ElseTemplate"> 
+                        Income : {{ user.income | currency : 'EUR'}}</p>
+                    <em>Total Votes : {{ user.votes }}
+                        <!-- <input type="number" [value]="user.votes" (change)="user.votes = $event.target.value"> -->
+                        <input type="number" [(ngModel)]="user.votes">
+                    </em>
+                </div>
+            </div>
+            <ng-template #ElseTemplate>
+                <p>{{ user.firstName }} is not Working now!</p>
+            </ng-template>
+        </li>
+    </ul>
+</div>
+
+<ng-content select="footer"></ng-content>

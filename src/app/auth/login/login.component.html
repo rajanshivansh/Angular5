@@ -1,0 +1,25 @@
+<div class="jumbotron">
+  <h1 class="text-center"> Login </h1>
+  <form #f="ngForm" (ngSubmit)="login(f)">
+    <div class="form-group">
+      <label for="username">Username : </label>
+      <input type="text" name="username" 
+        class="form-control" 
+        ngModel 
+        required 
+        minlength="6">
+    </div>
+    <div class="form-group">
+      <label for="password">Password : </label>
+      <input type="password" name="password" 
+        class="form-control" 
+        ngModel
+        required>
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg" [disabled]="f.invalid">
+      Login </button>
+    
+    <button type="button" class="btn btn-danger btn-lg" (click)="getData()"> Data</button>
+    
+  </form>
+</div>

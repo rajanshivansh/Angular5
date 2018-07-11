@@ -1,0 +1,9 @@
+h1{
+    color : royalblue;
+}
+.myBorder{
+    border : 2px greenyellow solid;
+}
+.myText{
+    text-decoration: underline;
+}
