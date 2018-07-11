@@ -18,7 +18,7 @@ export class AuthService {
         console.log(response);
         firebase.auth().currentUser.getIdToken()
           .then(token=>{
-            console.log(token);
+            //console.log(token);
             this.token = token;
             this.router.navigate(['/user']);
           }).catch(err=>console.log(err))
@@ -33,4 +33,5 @@ export class AuthService {
     return this.token != null;
   }
 
+  
 }

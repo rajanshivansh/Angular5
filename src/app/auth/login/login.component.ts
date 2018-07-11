@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { DataService } from '../../services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
       .subscribe(data=>console.log(data));
   }
   constructor(private authService : AuthService,
-              private dataService : DataService) { }
+              private dataService : DataService,
+              private router : Router) { }
 
   ngOnInit() {
   }

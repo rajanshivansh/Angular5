@@ -17,7 +17,8 @@ export class AppComponent {
   increase(){
     this.dataService.counter++;
   }
-  constructor(public dataService :DataService, public authservice : AuthService){}
+  constructor(public dataService :DataService,
+            public authService : AuthService){}
   ngOnInit(){
     //this.users = USER_DATA;
     
@@ -32,7 +33,7 @@ export class AppComponent {
       authDomain: "fir-soc-gen.firebaseapp.com"
     });
     
-    this.dataService.getApiData()
-      .subscribe(data=>this.users = data)
+    // this.dataService.getApiData()
+    //   .subscribe(data=>this.users = data)
   }
 }
