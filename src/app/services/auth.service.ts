@@ -20,6 +20,10 @@ export class AuthService {
           .then(token=>{
             //console.log(token);
             this.token = token;
+            // localStorage.setItem('mytoken', JSON.stringify({
+            //   token : token, 
+            //   expires : new Date()
+            // }));
             this.router.navigate(['/user']);
           }).catch(err=>console.log(err))
       }).catch(err=>console.log(err))

@@ -44,6 +44,9 @@ export const APP_ROUTES : Routes = [{
     path : 'employee',
     component : EmployeeComponent
 },{
+    path : 'lazy',
+    loadChildren : 'app/lazy/lazy.module#LazyModule'
+},{
     path : '**',                        //http://localhost:4200/notexist
     redirectTo : 'login',
     pathMatch : 'full'
