@@ -26,7 +26,7 @@ export class DataService {
     //         params : new HttpParams().set("auth", this.authService.getToken())
     //     });
     return this.httpClient
-       .get<User[]>("https://angular-project-1f886.firebaseio.com/userdata.json")
+       .get<User[]>("https://fir-soc-gen.firebaseio.com/userdata.json")
     }
     constructor(private http : Http,
                 private httpClient : HttpClient,

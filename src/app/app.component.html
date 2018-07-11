@@ -1,9 +1,22 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
+<div class="container">
+  <ul class="list-unstyled nav navbar-nav navbar-default">
+    <li><a [routerLink]="['']">Home</a></li>
+    <li><a [routerLink]="['register']">Register</a></li>
+    <li><a [routerLink]="['pipe']">Pipe Demo</a></li>
+  </ul>
+</div>
+
+<br>
+<br>
 <h1> Counter in App : {{ dataService.counter }}</h1>
 <button class="btn btn-default" (click)="increase()">Increase </button>
 <hr>
 <br>
+
+<router-outlet></router-outlet>
+<!-- 
 <div class="container">
   <app-register></app-register>
 </div>
@@ -11,7 +24,7 @@
 <hr>
 <div class="container">
   <app-login></app-login>
-</div>
+</div> -->
 
 <!-- 
 <div class="container">
@@ -21,10 +34,10 @@
 <hr>
 <br>
 
-
+<!-- 
 <div class="container">
   <input type="text" [(ngModel)]="title">
-</div>
+</div> -->
 
 <div>
   <app-user [title]="title" [users] = "users">
